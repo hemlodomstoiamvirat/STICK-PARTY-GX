@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STICK PARTY GX</title>
 
+<style>
+
+body{
+background:#0a0a0a;
+font-family:Arial,sans-serif;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+h1{
+color:#ff003c;
+text-shadow:0 0 10px #ff003c,0 0 20px #ff003c;
+}
+
+.card{
+background:#111;
+border:2px solid #ff003c;
+border-radius:20px;
+padding:20px;
+max-width:700px;
+margin:auto;
+box-shadow:0 0 20px #ff003c;
+}
+
+.player{
+background:#1a1a1a;
+padding:15px;
+margin:10px;
+border-radius:15px;
+}
+
+input{
+width:80%;
+padding:10px;
+margin:5px;
+border:none;
+border-radius:10px;
+}
+
+select{
+padding:10px;
+border-radius:10px;
+}
+
+button{
+background:#ff003c;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+box-shadow:0 0 15px #ff003c;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#game{
+display:none;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>⚔️ STICK PARTY GX ⚔️</h1>
+
+<div class="card">
+
+<h2>Player Setup</h2>
+
+<div class="player">
+Player 1<br>
+<input id="p1" value="Player 1">
+<br>
+<select id="c1">
+<option>Red</option>
+<option>Blue</option>
+<option>Green</option>
+<option>Yellow</option>
+</select>
+</div>
+
+<div class="player">
+Player 2<br>
+<input id="p2" value="Player 2">
+<br>
+<select id="c2">
+<option>Blue</option>
+<option>Red</option>
+<option>Green</option>
+<option>Yellow</option>
+</select>
+</div>
+
+<div class="player">
+Player 3<br>
+<input id="p3" value="Player 3">
+<br>
+<select id="c3">
+<option>Green</option>
+<option>Red</option>
+<option>Blue</option>
+<option>Yellow</option>
+</select>
+</div>
+
+<div class="player">
+Player 4<br>
+<input id="p4" value="Player 4">
+<br>
+<select id="c4">
+<option>Yellow</option>
+<option>Red</option>
+<option>Blue</option>
+<option>Green</option>
+</select>
+</div>
+
+<button onclick="startGame()">
+🎮 START GAME
+</button>
+
+<div id="game">
+<h2>🏎️ Race Arena Coming Soon</h2>
+
+<p id="players"></p>
+
+<p>
+🕹️ Joystick + Racing Game Next Update
+</p>
+</div>
+
+</div>
+
+<script>
+
+function startGame(){
+
+let text=
+`
+🔴 ${document.getElementById("p1").value}<br>
+🔵 ${document.getElementById("p2").value}<br>
+🟢 ${document.getElementById("p3").value}<br>
+🟡 ${document.getElementById("p4").value}
+`;
+
+document.getElementById("players").innerHTML=text;
+
+document.getElementById("game").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
