@@ -111,3 +111,81 @@ placeholder="Describe your image or video">
 </div>
 
 <script>
+function generateImage(){
+
+let prompt =
+document.getElementById("prompt").value;
+
+if(prompt===""){
+alert("Please enter a prompt");
+return;
+}
+
+document.getElementById("result").innerHTML=
+`
+<h3>🎨 AI Image Result</h3>
+
+<img src="https://picsum.photos/800/450?random=${Date.now()}">
+
+<p><b>Prompt:</b> ${prompt}</p>
+
+<button onclick="downloadImage()">
+📥 Download Image
+</button>
+
+<p style="opacity:0.7;">
+⚡ Neon Creator
+</p>
+`;
+
+}
+
+function generateVideo(){
+
+let prompt =
+document.getElementById("prompt").value;
+
+if(prompt===""){
+alert("Please enter a prompt");
+return;
+}
+
+document.getElementById("result").innerHTML=
+`
+<h3>🎬 AI Video Result</h3>
+
+<p>🚧 Video Generator Coming Soon</p>
+
+<p><b>Prompt:</b> ${prompt}</p>
+
+<button>
+📥 Download Video
+</button>
+
+<p style="opacity:0.7;">
+⚡ Neon Creator
+</p>
+`;
+
+}
+
+function downloadImage(){
+
+let link =
+document.querySelector("#result img");
+
+if(!link){
+return;
+}
+
+let a=document.createElement("a");
+a.href=link.src;
+a.download="neon-creator-image.jpg";
+a.click();
+
+}
+
+</script>
+
+</body>
+</html>
