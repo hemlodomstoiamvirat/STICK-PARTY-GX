@@ -3,139 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STICK PARTY GX</title>
+<title>Horizon GX</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-background:#000;
+height:100vh;
+overflow:hidden;
+background:black;
+}
+
+#menu{
+width:100%;
+height:100vh;
+background:url('lobby.png') center center/cover no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.title{
+font-size:60px;
 color:white;
-font-family:Arial;
-text-align:center;
-padding:20px;
+text-shadow:0 0 20px red;
+margin-bottom:40px;
 }
 
-h1{
-color:#ff003c;
-text-shadow:0 0 20px #ff003c;
-}
-
-.card{
-background:#111;
-border:2px solid #ff003c;
-border-radius:20px;
-padding:20px;
-max-width:600px;
-margin:auto;
+.btn{
+width:250px;
+padding:15px;
+margin:10px;
+font-size:22px;
+border:none;
+border-radius:12px;
+background:#ff003c;
+color:white;
 box-shadow:0 0 20px #ff003c;
 }
 
-input{
-width:80%;
-padding:10px;
-margin:5px;
-border-radius:10px;
-border:none;
+.btn:active{
+transform:scale(0.95);
 }
 
-button{
-background:#ff003c;
+#credits{
+margin-top:30px;
+font-size:22px;
 color:white;
-border:none;
+background:rgba(0,0,0,0.6);
 padding:10px 20px;
 border-radius:10px;
-margin:5px;
-font-size:18px;
-}
-
-.racer{
-font-size:30px;
-margin:10px;
-position:relative;
-left:0;
-}
-
-#game{
-display:none;
 }
 </style>
-
 </head>
+
 <body>
 
-<h1>⚔️ STICK PARTY GX ⚔️</h1>
+<div id="menu">
 
-<div class="card">
+<div class="title">
+🏁 HORIZON GX
+</div>
 
-<input id="p1" value="Player 1"><br>
-<input id="p2" value="Player 2"><br>
-<input id="p3" value="Player 3"><br>
-<input id="p4" value="Player 4"><br>
+<button class="btn" onclick="play()">
+▶ PLAY
+</button>
 
-<button onclick="startGame()">🎮 START GAME</button>
+<button class="btn">
+🚗 GARAGE
+</button>
 
-<div id="game">
+<button class="btn">
+🗺️ MAP
+</button>
 
-<h2>🏎️ Race Arena</h2>
+<button class="btn">
+🏆 LEADERBOARD
+</button>
 
-<button onclick="move(1)">🔴 P1</button>
-<button onclick="move(2)">🔵 P2</button>
-<button onclick="move(3)">🟢 P3</button>
-<button onclick="move(4)">🟡 P4</button>
-
-<div id="r1" class="racer">🔴🚗</div>
-<div id="r2" class="racer">🔵🚗</div>
-<div id="r3" class="racer">🟢🚗</div>
-<div id="r4" class="racer">🟡🚗</div>
-
+<div id="credits">
+💰 Credits: 5000
 </div>
 
 </div>
 
 <script>
 
-let pos1=0;
-let pos2=0;
-let pos3=0;
-let pos4=0;
-
-function startGame(){
-document.getElementById("game").style.display="block";
-}
-
-function move(player){
-
-if(player==1){
-pos1+=20;
-document.getElementById("r1").style.left=pos1+"px";
-if(pos1>=300){
-alert(document.getElementById("p1").value+" Wins!");
-}
-}
-
-if(player==2){
-pos2+=20;
-document.getElementById("r2").style.left=pos2+"px";
-if(pos2>=300){
-alert(document.getElementById("p2").value+" Wins!");
-}
-}
-
-if(player==3){
-pos3+=20;
-document.getElementById("r3").style.left=pos3+"px";
-if(pos3>=300){
-alert(document.getElementById("p3").value+" Wins!");
-}
-}
-
-if(player==4){
-pos4+=20;
-document.getElementById("r4").style.left=pos4+"px";
-if(pos4>=300){
-alert(document.getElementById("p4").value+" Wins!");
-}
-}
-
+function play(){
+alert("🚗 BMW M5 Black Demon Ready!");
 }
 
 </script>
