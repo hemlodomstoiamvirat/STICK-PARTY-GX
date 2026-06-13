@@ -7,7 +7,7 @@
 
 <style>
 body{
-background:#0a0a0a;
+background:#000;
 color:white;
 font-family:Arial;
 text-align:center;
@@ -16,7 +16,7 @@ padding:20px;
 
 h1{
 color:#ff003c;
-text-shadow:0 0 15px #ff003c;
+text-shadow:0 0 20px #ff003c;
 }
 
 .card{
@@ -24,7 +24,7 @@ background:#111;
 border:2px solid #ff003c;
 border-radius:20px;
 padding:20px;
-max-width:700px;
+max-width:600px;
 margin:auto;
 box-shadow:0 0 20px #ff003c;
 }
@@ -41,32 +41,30 @@ button{
 background:#ff003c;
 color:white;
 border:none;
-padding:12px 20px;
+padding:10px 20px;
 border-radius:10px;
 margin:5px;
-font-size:16px;
-}
-
-#game{
-display:none;
-margin-top:20px;
+font-size:18px;
 }
 
 .racer{
 font-size:30px;
 margin:10px;
-transition:0.2s;
+position:relative;
+left:0;
+}
+
+#game{
+display:none;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <h1>⚔️ STICK PARTY GX ⚔️</h1>
 
 <div class="card">
-
-<h2>Players</h2>
 
 <input id="p1" value="Player 1"><br>
 <input id="p2" value="Player 2"><br>
@@ -78,8 +76,6 @@ transition:0.2s;
 <div id="game">
 
 <h2>🏎️ Race Arena</h2>
-
-<p id="names"></p>
 
 <button onclick="move(1)">🔴 P1</button>
 <button onclick="move(2)">🔵 P2</button>
@@ -97,47 +93,47 @@ transition:0.2s;
 
 <script>
 
-let a=0;
-let b=0;
-let c=0;
-let d=0;
+let pos1=0;
+let pos2=0;
+let pos3=0;
+let pos4=0;
 
 function startGame(){
-
 document.getElementById("game").style.display="block";
-
-document.getElementById("names").innerHTML=
-document.getElementById("p1").value+" | "+
-document.getElementById("p2").value+" | "+
-document.getElementById("p3").value+" | "+
-document.getElementById("p4").value;
-
 }
 
 function move(player){
 
 if(player==1){
-a+=20;
-document.getElementById("r1").style.marginLeft=a+"px";
-if(a>=300) alert("🏆 "+document.getElementById("p1").value+" Wins!");
+pos1+=20;
+document.getElementById("r1").style.left=pos1+"px";
+if(pos1>=300){
+alert(document.getElementById("p1").value+" Wins!");
+}
 }
 
 if(player==2){
-b+=20;
-document.getElementById("r2").style.marginLeft=b+"px";
-if(b>=300) alert("🏆 "+document.getElementById("p2").value+" Wins!");
+pos2+=20;
+document.getElementById("r2").style.left=pos2+"px";
+if(pos2>=300){
+alert(document.getElementById("p2").value+" Wins!");
+}
 }
 
 if(player==3){
-c+=20;
-document.getElementById("r3").style.marginLeft=c+"px";
-if(c>=300) alert("🏆 "+document.getElementById("p3").value+" Wins!");
+pos3+=20;
+document.getElementById("r3").style.left=pos3+"px";
+if(pos3>=300){
+alert(document.getElementById("p3").value+" Wins!");
+}
 }
 
 if(player==4){
-d+=20;
-document.getElementById("r4").style.marginLeft=d+"px";
-if(d>=300) alert("🏆 "+document.getElementById("p4").value+" Wins!");
+pos4+=20;
+document.getElementById("r4").style.left=pos4+"px";
+if(pos4>=300){
+alert(document.getElementById("p4").value+" Wins!");
+}
 }
 
 }
